@@ -168,6 +168,7 @@ endfunction
   let g:rgcommand = 'rg --vimgrep --type-not sql --smart-case'
   nnoremap <leader><bs> :Rg '\b<c-r><c-w>\b'<cr>
   nnoremap <leader>a :Rg<space>
+  nnoremap <leader>s :Rg -g '*_spec.rb'<space>
 
 " NERDTree configuration
   let NERDTreeIgnore=['\~$', 'tmp', '\.git', '\.bundle', '.DS_Store', 'tags', '.swp']
