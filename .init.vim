@@ -4,6 +4,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " Plugins
   call plug#begin()
+    Plug 'pechorin/any-jump.vim' "find definitions/references/definitions
     Plug 'dracula/vim' "Colorscheme
     Plug 'kien/ctrlp.vim' "fuzzy file finder
     Plug 'jremmen/vim-ripgrep' "Search with RipGrep
@@ -225,7 +226,7 @@ map <Leader> <esc>
 inoreabbrev bpry require 'pry'; binding.pry
 
 " format JSON with python
-nnoremap <Leader>j :%!python -m json.tool<cr>
+nnoremap <Leader>js :%!python -m json.tool<cr>
 
 " Use powerline fonts with airline
 let g:airline_powerline_fonts = 1
