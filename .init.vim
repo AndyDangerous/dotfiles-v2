@@ -4,8 +4,11 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " Plugins
   call plug#begin()
+    Plug 'nvim-lua/plenary.nvim' "telescope dep
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "telescope dep
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " file finding
     Plug 'pechorin/any-jump.vim' "find definitions/references/definitions
-    Plug 'dracula/vim' "Colorscheme
+    Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kien/ctrlp.vim' "fuzzy file finder
     Plug 'jremmen/vim-ripgrep' "Search with RipGrep
     Plug 'JamshedVesuna/vim-markdown-preview' "Markdown Preview
@@ -246,38 +249,34 @@ endfunction
 " TigExplorer Stuff
 " open tig with current file
 nnoremap <Leader>T :TigOpenCurrentFile<CR>
-
 " open tig with Project root path
 nnoremap <Leader>t :TigOpenProjectRootDir<CR>
-
 " open tig grep
 nnoremap <Leader>g :TigGrep<CR>
-
 " resume from last grep
 nnoremap <Leader>r :TigGrepResume<CR>
-
 " open tig grep with the selected word
 vnoremap <Leader>g y:TigGrep<Space><C-R>"<CR>
-
 " open tig grep with the word under the cursor
 nnoremap <Leader>cg :<C-u>:TigGrep<Space><C-R><C-W><CR>
-
 " open tig blame with current file
 nnoremap <Leader>b :TigBlame<CR>
 
 " AnyJump Stuff
 " Normal mode: Jump to definition under cursor
 nnoremap <leader>j :AnyJump<CR>
-
 " Visual mode: jump to selected text in visual mode
 xnoremap <leader>j :AnyJumpVisual<CR>
-
 " Normal mode: open previous opened file (after jump)
 nnoremap <leader>ab :AnyJumpBack<CR>
-
 " Normal mode: open last closed search window again
 nnoremap <leader>al :AnyJumpLastResults<CR>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 autocmd VimEnter * call AirlineInit()
