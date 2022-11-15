@@ -23,19 +23,7 @@ let g:python3_host_prog = '/usr/bin/python3'
     Plug 'scrooloose/nerdtree' "File Tree
     Plug 'tpope/vim-unimpaired' "set paste, etc.
     Plug 'vim-syntastic/syntastic' "Syntax checking
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} "Conquorer of Completion
     Plug 'iberianpig/tig-explorer.vim' "tig exploter
-  let g:coc_global_extensions = [
-    'coc-emmet',
-    'coc-css',
-    'coc-eslint',
-    'coc-html',
-    'coc-json',
-    'coc-prettier',
-    'coc-tsserver',
-    'coc-snippets',
-    'coc-solargraph'
-  ]
   call plug#end()
 
 " Theme
