@@ -7,7 +7,6 @@ let g:python3_host_prog = '/usr/bin/python3'
     Plug 'nvim-lua/plenary.nvim' "telescope dep
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "telescope dep
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " file finding
-    Plug 'pechorin/any-jump.vim' "find definitions/references/definitions
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kien/ctrlp.vim' "fuzzy file finder
     Plug 'jremmen/vim-ripgrep' "Search with RipGrep
@@ -26,8 +25,16 @@ let g:python3_host_prog = '/usr/bin/python3'
     Plug 'vim-ruby/vim-ruby' "ruby tooling
     Plug 'scrooloose/nerdtree' "File Tree
     Plug 'tpope/vim-unimpaired' "set paste, etc.
-    Plug 'vim-syntastic/syntastic' "Syntax checking
+    " Plug 'vim-syntastic/syntastic' "Syntax checking
+    Plug 'sheerun/vim-polyglot' "different syntax
     Plug 'iberianpig/tig-explorer.vim' "tig exploter
+    " LSP {
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'pechorin/any-jump.vim'                  " jump to definition/reference
+    if has("nvim")
+      Plug 'folke/trouble.nvim'                   " better loc list
+    endif
+    " }
   call plug#end()
 
 " Theme
@@ -112,6 +119,15 @@ set colorcolumn=80               " set a column at 80 chars
 
 " Unhighlight search results
   map <Leader><space> :nohl<cr>
+
+" set up Trouble
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
 
 " ctrlp
  if get(g:, 'loaded_ctrlp', 1)
