@@ -120,15 +120,6 @@ set colorcolumn=80               " set a column at 80 chars
 " Unhighlight search results
   map <Leader><space> :nohl<cr>
 
-" set up Trouble
-lua << EOF
-  require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-EOF
-
 " ctrlp
  if get(g:, 'loaded_ctrlp', 1)
    let g:ctrlp_match_window_reversed = 0
@@ -294,5 +285,13 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-
 autocmd VimEnter * call AirlineInit()
+
+" set up Trouble This is at the end because it breaks syntax highlighting
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
