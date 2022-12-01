@@ -50,7 +50,6 @@ fi
   alias gdh='git diff HEAD'
   alias gl='git pull'
   alias glod='git log --oneline --decorate'
-  # alias glod='git log --graph --pretty="%Cgreen%h%Creset%Cblue%d%Creset %Cred%an%Creset: %s"'
   alias gp='git push'
   alias gpr='git pull --rebase'
   alias gst='git status'
@@ -92,7 +91,6 @@ fi
   }
 
 # version management
-  source /usr/local/opt/asdf/asdf.sh
   export PATH="$HOME/.asdf/shims:$PATH"
 
 # ruby
