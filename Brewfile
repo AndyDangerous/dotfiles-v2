@@ -5,7 +5,6 @@ tap "homebrew/cask-fonts"
 cask_args appdir: "/Applications"
 
 brew "ack"
-brew "asdf"
 brew "autojump"
 brew "bat"
 brew "brew-cask-completion"
@@ -37,7 +36,7 @@ cask "font-hack-nerd-font"
 cask "github"
 cask "karabiner-elements"
 cask "rocket"
-cask "spectacle"
+cask "rectangle"
 
 # First time running, uncomment these tools
 
