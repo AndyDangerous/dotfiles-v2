@@ -64,3 +64,5 @@
 [user]
 	name = Andy Mention
 	email =  amention@gmail.com
+[init]
+	defaultBranch = main
