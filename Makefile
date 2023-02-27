@@ -2,6 +2,7 @@
 
 dotfiles = .asdfrc \
 				.fzf.zsh \
+				.aliases \
 				.gitconfig \
 				.tmux.conf \
 				.tmate.conf \

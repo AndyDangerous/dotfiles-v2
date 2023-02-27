@@ -31,34 +31,10 @@ fi
   alias help='navi'
   alias less="less -R"
   alias lf="less +F"
-  alias ll="ls -la"
-  alias g='git'
-  alias mkcd='mkdir $1 && cd $1'
-  alias vi=nvim
+  # alias ll="ls -la"
 
 # git aliases
-  alias gap='git add -p'
-  alias gnap='git add -N --ignore-removal . && gap'
-  alias glp='git log -p'
-  alias glg='git log --graph --oneline --decorate --color --all'
-  alias gb='git branch'
-  alias gc='git commit -v'
-  alias gca='git commit -a -v'
   alias gcl='git clean -f -d'
-  alias gd='git diff'
-  alias gdc='git diff --cached'
-  alias gdh='git diff HEAD'
-  alias gl='git pull'
-  alias glod='git log --oneline --decorate'
-  alias gp='git push'
-  alias gpr='git pull --rebase'
-  alias gst='git status'
-  alias gr='git rebase'
-  alias grc='git rebase --continue'
-  alias gra='git rebase --abort'
-  alias gco='git checkout'
-  alias gsm='git switch main && git pull --rebase'
-  alias reset-authors='git commit --amend --reset-author -C HEAD'
 
 
 # shell functions
@@ -104,6 +80,8 @@ fi
 
 # secrets
 # source ~/.secrets
+
+source "$HOME/.aliases"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
