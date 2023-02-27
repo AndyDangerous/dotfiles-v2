@@ -59,10 +59,16 @@
 	prune = true
 [commit]
   verbose = true
+	gpgsign = true
 [alias]
   gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 [user]
 	name = Andy Mention
 	email =  amention@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICyOyJMrLruLkFPNUZaIoq7OCzScKE6gDSvlijI4HTji
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
