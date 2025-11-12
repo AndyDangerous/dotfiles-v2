@@ -69,9 +69,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
      mkdir -p "$1" && cd "$1"
   }
 
-# version management
-  export PATH="$HOME/.asdf/shims:$PATH"
-
 # ruby
   export ARCHFLAGS='-arch x86_64'
   export CC=gcc
@@ -81,8 +78,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   zrcl="$HOME/.zshrc.local"
   [[ ! -a $zrcl ]] || source $zrcl
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# version management
+# export PATH="$HOME/.asdf/shims:$PATH"
+# asdf
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # secrets
-# source ~/.secrets
+source ~/.secrets
 
 source "$HOME/.aliases"
 
@@ -90,3 +97,9 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export MISE_ENV_FILE=.env
+eval "$(mise activate)"
+
+# Added by Windsurf
+export PATH="/Users/andymention/.codeium/windsurf/bin:$PATH"
