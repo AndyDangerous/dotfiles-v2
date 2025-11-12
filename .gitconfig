@@ -62,6 +62,7 @@
 	gpgsign = true
 [alias]
   gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+	mah-joke = !curl https://icanhazdadjoke.com/
 [user]
 	name = Andy Mention
 	email =  amention@gmail.com
