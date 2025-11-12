@@ -61,3 +61,6 @@ alias vi="nvim"
 
 # Dirs
 alias hbase="cd ~/development/Homebase1/"
+
+# Other Homebase Stuff
+alias dbconnect="PGPASSWORD=homebase pgcli -h 127.0.0.1 -U hai -p"
