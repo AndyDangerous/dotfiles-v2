@@ -236,7 +236,7 @@ map <Leader> <esc>
 inoreabbrev bpry require 'pry'; binding.pry
 
 " format JSON with python
-nnoremap <Leader>js :%!python -m json.tool<cr>
+nnoremap <Leader>js :%!python3 -m json.tool<cr>
 
 " Use powerline fonts with airline
 let g:airline_powerline_fonts = 1
