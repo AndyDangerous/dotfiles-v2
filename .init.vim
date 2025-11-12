@@ -6,7 +6,7 @@ let g:python3_host_prog = '/usr/bin/python3'
   call plug#begin()
     Plug 'nvim-lua/plenary.nvim' "telescope dep
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "telescope dep
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " file finding
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } " file finding
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kien/ctrlp.vim' "fuzzy file finder
     Plug 'jremmen/vim-ripgrep' "Search with RipGrep
