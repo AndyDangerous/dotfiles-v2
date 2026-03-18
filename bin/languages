@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 
-	if ! [[ -d ~/.asdf/plugins/ruby ]]; then
-		asdf plugin add ruby
-	fi
-
-	if ! [[ -d ~/.asdf/plugins/nodejs ]]; then
-		asdf plugin add nodejs
-	fi
-
-	export RUBY_CONFIGURE_OPTS="--with-libyaml-dir=$(brew --prefix libyaml)"
-	asdf install
+mise install
