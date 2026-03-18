@@ -1,4 +1,6 @@
 .DEFAULT_GOAL := install
+export PATH := /opt/homebrew/bin:/opt/homebrew/sbin:$(PATH)
+BREW := $(shell command -v brew || echo /opt/homebrew/bin/brew)
 
 dotfiles = .asdfrc \
 				.fzf.zsh \
@@ -18,7 +20,7 @@ echo.%:
 	@echo "\n$(cyan)Building $*$(off)"
 
 packages: echo.packages
-	brew bundle
+	$(BREW) bundle
 
 shell: echo.shell
 	bin/shell
@@ -42,6 +44,6 @@ languages: echo.languages
 other: echo.other
 	defaults write com.apple.screencapture location ~/Downloads;killall SystemUIServer ;\
   defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder ;\
-	python3 -m pip install --user --upgrade pynvim;\
+	python3 -m pip install --user --upgrade --break-system-packages pynvim;\
 	rm -rf ~/.config/karabiner/karabiner.json ;\
 	ln -s $(shell pwd)/karabiner.json ~/.config/karabiner/karabiner.json 
