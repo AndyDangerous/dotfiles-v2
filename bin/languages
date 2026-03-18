@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-	asdf update
-
 	if ! [[ -d ~/.asdf/plugins/ruby ]]; then
 		asdf plugin add ruby
 	fi
@@ -10,5 +8,5 @@
 		asdf plugin add nodejs
 	fi
 
-	~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+	export RUBY_CONFIGURE_OPTS="--with-libyaml-dir=$(brew --prefix libyaml)"
 	asdf install
