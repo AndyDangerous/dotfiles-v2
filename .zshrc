@@ -81,6 +81,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # version management
 eval "$(mise activate zsh)"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # secrets
 [[ -f ~/.secrets ]] && source ~/.secrets
 
